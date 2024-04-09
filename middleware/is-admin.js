@@ -1,6 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const asyncWrap = require('./async-wrapper');
-const AuthError = require('../Error/AuthError');
+const AuthError = require('../error/AuthError');
 const prisma = new PrismaClient();
 
 const User = prisma.user;

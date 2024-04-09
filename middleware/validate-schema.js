@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const ValidationError = require('../Error/ValidationError');
+const ValidationError = require('../error/ValidationError');
 
 function validateSchema(schema, req, next) {
     const { error } = schema.validate(req.body);

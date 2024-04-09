@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const AuthError = require('../Error/AuthError');
+const AuthError = require('../error/AuthError');
 const dotenv = require("dotenv").config({ path: '../.env' });
 
 const verifyUser = (req, res, next) => {
