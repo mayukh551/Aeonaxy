@@ -19,6 +19,7 @@ app.use(rateLimiter);
 app.use(logRequest);
 
 // api routes
+app.use('/', (req, res) => res.send('Welcome to the e-learning platform!'));
 app.use('/api/user', require('./routers/user'));
 app.use('/api/course', require('./routers/course'));
 app.use('/api/enroll', require('./routers/enroll'));
