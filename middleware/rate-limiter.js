@@ -20,13 +20,11 @@ const rateLimiter = asyncWrap(async (req, res, next) => {
 
         // if no. of requests are within the limit set by maxAttemptsByIP
         .then((RateLimiterRes) => {
-            console.log('Rate limiter: request allowed');
             next();
         })
 
         // if no. of requests exceed the limit set by maxAttemptsByIP
         .catch((RateLimiterRes) => {
-            console.log('Rate limiter: request blocked');
 
             if (RateLimiterRes.consumedPoints > maxAttemptsByIP) {
                 // retry after blockDuration
