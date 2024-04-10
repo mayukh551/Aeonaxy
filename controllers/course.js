@@ -23,15 +23,11 @@ const getCourses = asyncWrap(async (req, res, next) => {
 
     var filter = {};
 
-    console.log(limit, page);
-
     if (req.query.name) filter.name = req.query.name;
     if (req.query.level) filter.level = req.query.level;
     // if (req.query.rating) filter.rating = parseFloat(req.query.rating);
     // if (req.query.price) filter.price = parseInt(req.query.price);
     if (req.query.category) filter.category = req.query.category;
-
-    console.log(filter);
 
     // if filter is undefined
     if (Object.keys(filter).length === 0) filter = undefined;
