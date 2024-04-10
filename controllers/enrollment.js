@@ -74,12 +74,11 @@ const buyCourse = asyncWrap(async (req, res, next) => {
         throw new CourseError(400, "Invalid User Id", error);
     }
 
-
     const { data, error } = resend.emails.send({
         to: user.email,
         from: 'onboarding@resend.dev',
         subject: "Course Enrollment Confirmation",
-        message: `You have successfully enrolled in the course ${course.name}`
+        text: `You have successfully enrolled in the course ${course.name}`
     })
 
     if (error) throw new CourseError(500, "Error sending email", error);
